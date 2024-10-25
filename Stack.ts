@@ -1,10 +1,10 @@
-type SNode<T> = {
+type Node<T> = {
   value: T;
-  prev?: SNode<T>;
+  prev?: Node<T>;
 };
 
 export default class Stack<T> {
-  private head?: SNode<T>;
+  private head?: Node<T>;
   public length: number;
 
   constructor() {
@@ -13,7 +13,7 @@ export default class Stack<T> {
   }
 
   push(item: T): void {
-    const node = { value: item } as SNode<T>;
+    const node = { value: item } as Node<T>;
 
     if (this.length === 0) {
       this.head = node;
